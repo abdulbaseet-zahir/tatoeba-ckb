@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+name = "tatoeba_ckb"
+
+version = "0.1.0"
+description = "A package for collecting translated English - Central Kurdish sentence pairs from tatoeba.org."
+authors = ["Abdulbasit Zahir"]
+license = "Unlicense"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+pandas = "^1.3.4"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+
+[tool.poetry.plugins]
+
+[tool.poetry.flit]
+metadata = {python = "3.6"}
+
+[tool.poetry.export]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry.build]

@@ -40,12 +40,12 @@ data = tatoeba_ckb.get_data()
 
 **The DataFrame contains the following columns:**
 
-- eng_id: ID of the English sentence
-- ckb_id: ID of the Central Kurdish sentence
-- eng_sentence: The English sentence
-- ckb_sentence: The Central Kurdish sentence
-- eng_username: Username of the English sentence contributor
-- ckb_username: Username of the Central Kurdish sentence contributor
+- `eng_id`: ID of the English sentence
+- `ckb_id`: ID of the Central Kurdish sentence
+- `eng_sentence`: The English sentence
+- `ckb_sentence`: The Central Kurdish sentence
+- `eng_username`: Username of the English sentence contributor
+- `ckb_username`: Username of the Central Kurdish sentence contributor
 
 
 ### Explore and Use the Data

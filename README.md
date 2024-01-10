@@ -1,75 +1,75 @@
-# Tatoeba Data Processor
+# TatoebaCKB: Data Download and Processing Tool for Tatoeba Website
 
-This Python module allows you to download and process data from the Tatoeba website, specifically focusing on English and Central Kurdish sentences.
+This repository hosts a suite of tools designed to facilitate the download and processing of parallel sentence data sourced from Tatoeba for the English and Central Kurdish (ckb) languages.
 
-## Installation
+## Key Features
 
-Ensure you have Python 3 installed. Clone this repository and install the required dependencies using:
+- Directly downloads data from Tatoeba's public datasets.
+- Efficiently processes and consolidates English and Central Kurdish sentences for enhanced accessibility.
+- Persists prepared data in a tab-separated (TSV) file format, ensuring seamless integration with various tools.
+
+## Installation from Repository
+
+Ensure Python 3 is installed. Clone this repository and install necessary dependencies using the following command:
 
 ```bash
-pip install .
+pip install git+https://github.com/abdulbaseet-zahir/tatoeba-ckb.git
 ```
 
-## Usage
+### Usage
 
-### Importing the Module
+1. Import the `TatoebaCKB` class
 
 ```python
-from tatoeba_ckb import Tatoeba
+from tatoeba_ckb import TatoebaCKB
 ```
 
-### Initializing the Tatoeba Class
+2. Create an instance of the class
 
 ```python
-tatoeba = Tatoeba()
+tatoeba_ckb = TatoebaCKB()
 ```
-
-### Methods
-
-#### `bz2url_to_df(url: str) -> pd.DataFrame`
-
-Download a bz2-compressed file from a URL and return a pandas DataFrame.
-
-Example:
-
+3. Get the data:
 ```python
-data_frame = tatoeba.bz2url_to_df('https://your-url.com/your-file.bz2')
+data = tatoeba_ckb.get_data()
 ```
 
-#### `download_eng_ckb_data_from_tatoeba(ckb_eng_links_url: str = CKB_ENG_LINKS_URL, ckb_sentences_detailed_url: str = CKB_SENTENCES_DETAILED_URL, eng_sentences_detailed_url: str = ENG_SENTENCES_DETAILED_URL) -> None`
+ This will download the data if it's not already present, and return a pandas DataFrame containing the parsed data.
 
-Download and merge English and Central Kurdish data from the Tatoeba website.
+### Data Structure
 
-Example:
+**The DataFrame contains the following columns:**
 
+- eng_id: ID of the English sentence
+- ckb_id: ID of the Central Kurdish sentence
+- eng_sentence: The English sentence
+- ckb_sentence: The Central Kurdish sentence
+- eng_username: Username of the English sentence contributor
+- ckb_username: Username of the Central Kurdish sentence contributor
+
+
+### Explore and Use the Data
+
+**Access and manipulate the data using pandas operations:**
 ```python
-tatoeba.download_eng_ckb_data_from_tatoeba()
+print(data.head())  # View the first few rows
+print(data.shape)   # Check the dimensions of the DataFrame
 ```
 
-#### `get_data(data_path: str = "data", source: str = "eng_ckb_tatoeba") -> pd.DataFrame`
+**Use the data for various tasks, such as:**
+- Building machine translation models
+- Creating language learning resources
+- Researching language patterns
 
-Get the data from a given source.
+### Additional Information
 
-Example:
+- For more details on available methods, refer to the class documentation within the code.
+- If you encounter any issues, please open an issue on the repository.
 
-```python
-data = tatoeba.get_data()
-```
+### Contribute
 
-#### `get_data_sources() -> list`
+We welcome contributions to this project! Feel free to submit issues or pull requests.
 
-Get the list of supported data sources.
-
-Example:
-
-```python
-sources = tatoeba.get_data_sources()
-```
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
+### License
 [UNLICENSED](LICENSE)
+

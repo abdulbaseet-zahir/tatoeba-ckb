@@ -12,7 +12,7 @@ from .constants import (
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 
 
-class Tatoeba:
+class TatoebaCKB:
     """A class to download and process data from Tatoeba website.
 
     Methods:

@@ -1,3 +1,3 @@
-from .tatoeba import Tatoeba
+from .tatoeba_ckb import TatoebaCKB
 
-__all__ = ["Tatoeba"]
+__all__ = ["TatoebaCKB"]
